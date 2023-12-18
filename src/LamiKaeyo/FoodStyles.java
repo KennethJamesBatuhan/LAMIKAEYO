@@ -1,11 +1,8 @@
 package LamiKaeyo;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.Map;
 import java.util.HashMap;
-
 
 public class FoodStyles{
  public static JPanel createAdoboRecipePanel() {
@@ -50,8 +47,8 @@ public class FoodStyles{
     
     Map<String, Double> ingredientPrices = new HashMap<>();
     ingredientPrices.put("1 Sachet MAGGI Magic Sarap", 5.00);
-    ingredientPrices.put("0.5 Kg Pork Shoulder", 800.00);
-    ingredientPrices.put("2 tbls Vegetable Oil", 26.00);
+    ingredientPrices.put("0.5 Kg Pork Shoulder", 200.00);
+    ingredientPrices.put("2 tbls Vegetable Oil", 15.00);
     ingredientPrices.put("1 Head Garlic", 7.00);
     ingredientPrices.put("0.25 Cup Spiced Vinegar", 12.00);
     ingredientPrices.put("2 tbls Soy Sauce", 8.00);
@@ -95,8 +92,6 @@ public class FoodStyles{
             buyButton.setVisible(atLeastOneChecked);
             buyButton.setText("Buy - Total: ₱" + String.format("%.2f", totalCost[0])); 
         });
-
-        
         gbc.gridx = checkboxCount % numColumns; 
         ingredientsPanel.add(ingredientCheckbox, gbc);
 
@@ -106,9 +101,6 @@ public class FoodStyles{
 
         checkboxCount++;
     }
-    
-    
-
     JScrollPane ingredientsScrollPane = new JScrollPane(ingredientsPanel);
     ingredientsScrollPane.setBorder(null); 
     ingredientsScrollPane.getViewport().setOpaque(false); 
@@ -116,10 +108,12 @@ public class FoodStyles{
 
     JTextArea procedureArea = new JTextArea("Procedure:\n\n"
             + "1. Season chicken with 1 sachet MAGGI® Magic Sarap®. Set aside.\n"
-            + "2. Sauté garlic, ginger, onion, lemongrass (optional), and finger chili in oil. Add chicken and cook for 2 minutes.\n"
-            + "3. Pour water, boil, skim the scum, and simmer for 15 minutes.\n"
-            + "4. Add papaya and simmer for another 10 minutes.\n"
-            + "5. Season with the remaining 1 sachet of MAGGI® Magic Sarap®. Stir in chili tops. Transfer into a serving bowl and serve hot.");
+            + "2. Sauté garlic, ginger, onion, lemongrass (optional), and finger chili in oil.\n"
+            + "3. Add chicken and cook for 2 minutes.\n"
+            + "4. Pour water, boil, skim the scum, and simmer for 15 minutes.\n"
+            + "5. Add papaya and simmer for another 10 minutes.\n"
+            + "6. Season with the remaining 1 sachet of MAGGI® Magic Sarap®. Stir in chili tops.\n"
+            + "7.Transfer into a serving bowl and serve hot.");
     procedureArea.setForeground(Color.decode("#8B0000"));
     procedureArea.setFont(new Font("Arial", Font.PLAIN, 14));
     procedureArea.setOpaque(false);
@@ -201,9 +195,6 @@ public class FoodStyles{
         buyIngredientsFrame.dispose();
     }
 });
-
-
-    
         
         cancelButton.addActionListener(actionEvent -> buyIngredientsFrame.dispose());           
         buttonPanel.add(confirmButton);
@@ -493,9 +484,9 @@ public static JPanel createChickenTinolaRecipePanel() {
             "0.25 cup Red Chili"
         };
         Map<String, Double> ingredientPrices = new HashMap<>();
-        ingredientPrices.put("0.5 kg Chicken Leg", 200.00);
+        ingredientPrices.put("0.5 kg Chicken Leg", 120.00);
         ingredientPrices.put("2 sachets MAGGI® Magic Sarap® 8g", 10.00);
-        ingredientPrices.put("2 tbsp Vegetable Oil", 26.00);
+        ingredientPrices.put("2 tbsp Vegetable Oil", 15.00);
         ingredientPrices.put("4 cloves Garlic", 7.00);
         ingredientPrices.put("1 pc Ginger", 5.00);
         ingredientPrices.put("1 pc Onion", 12.00);
@@ -638,9 +629,6 @@ public static JPanel createChickenTinolaRecipePanel() {
         buyIngredientsFrame.dispose();
     }
 });
-
-    
-        
         cancelButton.addActionListener(actionEvent -> buyIngredientsFrame.dispose()); 
         
         buttonPanel.add(confirmButton);
@@ -705,11 +693,11 @@ public static JPanel createChickenTinolaRecipePanel() {
             "1 cup Kangkong"
         };
         Map<String, Double> ingredientPrices = new HashMap<>();
-        ingredientPrices.put("0.5 kg Pork Spareribs", 400.00);
-        ingredientPrices.put("1 pc Onion", 30.00);
-        ingredientPrices.put("2 pcs Tomato", 55.00);
+        ingredientPrices.put("0.5 kg Pork Spareribs", 200.00);
+        ingredientPrices.put("1 pc Onion", 20.00);
+        ingredientPrices.put("2 pcs Tomato", 40.00);
         ingredientPrices.put("1 pc Finger Chili", 13.00);
-        ingredientPrices.put("0.5 cup Radish", 30.00);
+        ingredientPrices.put("0.5 cup Radish", 20.00);
         ingredientPrices.put("0.5 cup Okra", 13.00);
         ingredientPrices.put("0.5 cup Sitaw", 55.00);
         ingredientPrices.put("1 sachet MAGGI® Magic Sinigang Sampalok With Gabi Mix", 30.00);
@@ -917,16 +905,16 @@ public static JPanel createChickenTinolaRecipePanel() {
     };
     
     Map<String, Double> ingredientPrices = new HashMap<>();
-    ingredientPrices.put("1 ⅓ cups water", 0.99);
-    ingredientPrices.put("⅔ cup uncooked short-grain white rice", 1.49);
-    ingredientPrices.put("3 tablespoons rice vinegar", 1.49);
-    ingredientPrices.put("3 tablespoons white sugar", 1.49);
-    ingredientPrices.put("1 ½ teaspoons salt", 1.49);
-    ingredientPrices.put("4 sheets nori seaweed sheets", 1.49);
-    ingredientPrices.put("½ pound imitation crabmeat, flaked", 1.49);
-    ingredientPrices.put("1 avocado - peeled, pitted, and sliced", 1.49);
+    ingredientPrices.put("1 ⅓ cups water", 5.00);
+    ingredientPrices.put("⅔ cup uncooked short-grain white rice", 15.00);
+    ingredientPrices.put("3 tablespoons rice vinegar", 15.00);
+    ingredientPrices.put("3 tablespoons white sugar", 15.00);
+    ingredientPrices.put("1 ½ teaspoons salt", 10.00);
+    ingredientPrices.put("4 sheets nori seaweed sheets", 60.00);
+    ingredientPrices.put("½ pound imitation crabmeat, flaked", 100.00);
+    ingredientPrices.put("1 avocado - peeled, pitted, and sliced", 50.00);
     ingredientPrices.put("½ cucumber, peeled, cut into small strips", 1.49);
-    ingredientPrices.put("2 tablespoons pickled ginger", 1.49);
+    ingredientPrices.put("2 tablespoons pickled ginger", 15.00);
     
     int numColumns = 2;
     int checkboxCount = 0;
@@ -1145,18 +1133,18 @@ public static JPanel createSukiyakiRecipePanel() {
     
     Map<String, Double> sukiyakiIngredientPrices = new HashMap<>();
     sukiyakiIngredientPrices.put("1 ½ cups water", 0.99);
-    sukiyakiIngredientPrices.put("⅔ cup soy sauce", 1.49);
-    sukiyakiIngredientPrices.put("⅔ cup white sugar", 1.49);
-    sukiyakiIngredientPrices.put("⅓ cup sake", 2.49);
+    sukiyakiIngredientPrices.put("⅔ cup soy sauce", 10.00);
+    sukiyakiIngredientPrices.put("⅔ cup white sugar", 10.00);
+    sukiyakiIngredientPrices.put("⅓ cup sake", 25.00);
     sukiyakiIngredientPrices.put("1 pound thinly sliced beef", 2.49);
-    sukiyakiIngredientPrices.put("1 (12 ounce) package firm tofu, drained and cut into bite-size pieces", 2.49);
-    sukiyakiIngredientPrices.put("½ head Chinese cabbage, cut into bite-size pieces", 2.49);
-    sukiyakiIngredientPrices.put("1 (7 ounce) package yam noodles (shirataki), drained", 2.49);
-    sukiyakiIngredientPrices.put("7 shiitake mushrooms, sliced", 2.49);
-    sukiyakiIngredientPrices.put("1 enoki mushrooms, roots removed", 2.49);
-    sukiyakiIngredientPrices.put("1 green onion (negi), sliced", 2.49);
-    sukiyakiIngredientPrices.put("1 tablespoon vegetable oil", 2.49);
-    sukiyakiIngredientPrices.put("4 eggs", 2.49);
+    sukiyakiIngredientPrices.put("1 (12 ounce) package firm tofu, drained and cut into bite-size pieces", 175.00);
+    sukiyakiIngredientPrices.put("½ head Chinese cabbage, cut into bite-size pieces", 55.00);
+    sukiyakiIngredientPrices.put("1 (7 ounce) package yam noodles (shirataki), drained", 50.00);
+    sukiyakiIngredientPrices.put("7 shiitake mushrooms, sliced", 30.00);
+    sukiyakiIngredientPrices.put("1 enoki mushrooms, roots removed", 50.00);
+    sukiyakiIngredientPrices.put("1 green onion (negi), sliced", 30.00);
+    sukiyakiIngredientPrices.put("1 tablespoon vegetable oil", 8.00);
+    sukiyakiIngredientPrices.put("4 eggs", 60.00);
     
     
     int numColumns = 2;
@@ -1374,22 +1362,22 @@ public static JPanel createSukiyakiRecipePanel() {
 };
     
     Map<String, Double> ramenIngredientPrices = new HashMap<>();
-    ramenIngredientPrices.put("6 cups chicken broth", 3.99);
-    ramenIngredientPrices.put("3 cloves garlic, minced", 1.25);
-    ramenIngredientPrices.put("1 onion, chopped", 0.75);
-    ramenIngredientPrices.put("1 piece ginger (about 1-inch), sliced", 0.99);
-    ramenIngredientPrices.put("2 tablespoons soy sauce", 1.49);
-    ramenIngredientPrices.put("2 tablespoons mirin (sweet rice wine) or sugar", 1.99);
-    ramenIngredientPrices.put("Salt to taste", 0.50);
-    ramenIngredientPrices.put("Ramen noodles (fresh or dried)", 2.99);
-    ramenIngredientPrices.put("Sliced cooked pork (chashu), chicken, or tofu for protein", 4.49);
-    ramenIngredientPrices.put("Soft-boiled eggs (seasoned with soy sauce and mirin while boiling)", 1.99);
-    ramenIngredientPrices.put("Sliced green onions", 0.75);
-    ramenIngredientPrices.put("Nori seaweed sheets", 2.25);
-    ramenIngredientPrices.put("Bamboo shoots (menma)", 1.50);
-    ramenIngredientPrices.put("Corn kernels (optional)", 1.25);
-    ramenIngredientPrices.put("Sesame seeds (optional)", 1.75);
-    ramenIngredientPrices.put("Red chili flakes or sesame oil (optional for spice)", 2.25);
+    ramenIngredientPrices.put("6 cups chicken broth", 200.00);
+    ramenIngredientPrices.put("3 cloves garlic, minced", 35.00);
+    ramenIngredientPrices.put("1 onion, chopped", 32.00);
+    ramenIngredientPrices.put("1 piece ginger (about 1-inch), sliced", 30.00);
+    ramenIngredientPrices.put("2 tablespoons soy sauce", 15.00);
+    ramenIngredientPrices.put("2 tablespoons mirin (sweet rice wine) or sugar", 15.00);
+    ramenIngredientPrices.put("Salt to taste", 20.00);
+    ramenIngredientPrices.put("Ramen noodles (fresh or dried)", 150.00);
+    ramenIngredientPrices.put("Sliced cooked pork (chashu), chicken, or tofu for protein", 250.00);
+    ramenIngredientPrices.put("Soft-boiled eggs (seasoned with soy sauce and mirin while boiling)", 100.00);
+    ramenIngredientPrices.put("Sliced green onions", 35.00);
+    ramenIngredientPrices.put("Nori seaweed sheets", 125.00);
+    ramenIngredientPrices.put("Bamboo shoots (menma)", 75.00);
+    ramenIngredientPrices.put("Corn kernels (optional)", 65.00);
+    ramenIngredientPrices.put("Sesame seeds (optional)", 85.00);
+    ramenIngredientPrices.put("Red chili flakes or sesame oil (optional for spice)", 125.00);
 
     
     int numColumns = 2;
@@ -1593,14 +1581,14 @@ public static JPanel createSukiyakiRecipePanel() {
         "1 tablespoon water",
         "1 teaspoon soy sauce, or to taste (Optional)",
         "½ teaspoon white sugar",
-        "1 egg"
+        "3 egg"
     };
     
     Map<String, Double> tamagoyakiIngredientPrices = new HashMap<>();
-    tamagoyakiIngredientPrices.put("1 tablespoon water", 0.25);
-    tamagoyakiIngredientPrices.put("1 teaspoon soy sauce, or to taste (Optional)", 0.75);
-    tamagoyakiIngredientPrices.put("½ teaspoon white sugar", 0.50);
-    tamagoyakiIngredientPrices.put("1 egg", 0.35);
+    tamagoyakiIngredientPrices.put("1 tablespoon water", 5.00);
+    tamagoyakiIngredientPrices.put("1 teaspoon soy sauce, or to taste (Optional)", 5.00);
+    tamagoyakiIngredientPrices.put("½ teaspoon white sugar", 15.00);
+    tamagoyakiIngredientPrices.put("3 egg", 45.00);
     
     int numColumns = 2;
     int checkboxCount = 0;
@@ -2027,16 +2015,16 @@ public static JPanel createSukiyakiRecipePanel() {
     };
 
     Map<String, Double> miniKimbapIngredientPrices = new HashMap<>();
-    miniKimbapIngredientPrices.put("4 cups cooked rice, short or medium grain", 54.71);
-    miniKimbapIngredientPrices.put("1 Tbsp sesame oil", 54.71);
-    miniKimbapIngredientPrices.put("1/2 tsp fine salt", 54.71);
-    miniKimbapIngredientPrices.put("140 g yellow pickled radish (danmuji)", 54.71);
-    miniKimbapIngredientPrices.put("1 carrot (150g / 5.3 ounces)", 54.71);
-    miniKimbapIngredientPrices.put("2 sheets fish cake", 54.71);
-    miniKimbapIngredientPrices.put("1.5 Tbsp soy sauce, regular", 54.71);
-    miniKimbapIngredientPrices.put("1/2 Tbsp brown sugar", 54.71);
-    miniKimbapIngredientPrices.put("4 cups cooked rice, short or medium grain", 54.71);
-    miniKimbapIngredientPrices.put("2 Tbsp rice wine (mirin)", 54.71);
+    miniKimbapIngredientPrices.put("4 cups cooked rice, short or medium grain", 55.00);
+    miniKimbapIngredientPrices.put("1 Tbsp sesame oil", 15.00);
+    miniKimbapIngredientPrices.put("1/2 tsp fine salt", 5.00);
+    miniKimbapIngredientPrices.put("140 g yellow pickled radish (danmuji)", 150.00);
+    miniKimbapIngredientPrices.put("1 carrot (150g / 5.3 ounces)", 50.00);
+    miniKimbapIngredientPrices.put("2 sheets fish cake", 30.00);
+    miniKimbapIngredientPrices.put("1.5 Tbsp soy sauce, regular", 15.00);
+    miniKimbapIngredientPrices.put("1/2 Tbsp brown sugar", 15.00);
+    miniKimbapIngredientPrices.put("4 cups cooked rice, short or medium grain", 55.00);
+    miniKimbapIngredientPrices.put("2 Tbsp rice wine (mirin)", 40.00);
         
 
     int numColumns = 2;
@@ -2414,7 +2402,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             JOptionPane.OK_CANCEL_OPTION,
             JOptionPane.INFORMATION_MESSAGE
     );
-
     if (optionChosen == JOptionPane.OK_OPTION) {
         JFrame thankYouFrame = new JFrame("Thank You");
         JLabel thankYouLabel = new JLabel("Thank you for your purchase!");
@@ -2427,9 +2414,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         buyIngredientsFrame.dispose();
     }
 });
-
-    
-        
         cancelButton.addActionListener(actionEvent -> buyIngredientsFrame.dispose()); 
         
         buttonPanel.add(confirmButton);
@@ -2438,20 +2422,16 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         ingredientsListPanel.add(checkedIngredientsArea, BorderLayout.CENTER);
         ingredientsListPanel.add(buttonPanel, BorderLayout.SOUTH);
         
-        
         buyIngredientsFrame.add(ingredientsListPanel);
         buyIngredientsFrame.pack();
         buyIngredientsFrame.setLocationRelativeTo(null); 
         buyIngredientsFrame.setVisible(true);
     }
 });
-
-    
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
     buttonPanel.add(buyButton);
     buttonPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 0));
 
-    
     chickenNoodleSoupPanel.setLayout(new BorderLayout());
     chickenNoodleSoupPanel.add(labelsPanel, BorderLayout.NORTH);
     chickenNoodleSoupPanel.add(ingredientsScrollPane, BorderLayout.CENTER);
@@ -2460,7 +2440,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
 
     return chickenNoodleSoupPanel;
 }
-
    public static JPanel createDonkatsuRecipePanel() {
     JPanel donkatsuPanel = new JPanel(new BorderLayout());
 
@@ -2513,7 +2492,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         "Kimchi ",
         "*1 Tbsp = 15 ml, 1 Cup = 250 ml ",
     };
-
     Map<String, Double> donkatsuIngredientPrices = new HashMap<>();
     donkatsuIngredientPrices.put("¼ cup ketchup", 4.43);
     donkatsuIngredientPrices.put("½ cup tonkatsu sauce, bulldog brand preferred " , 47.06);
@@ -2583,11 +2561,9 @@ ingredientsScrollPane.getViewport().setOpaque(false);
 
         checkboxCount++;
     }
-    
     JScrollPane ingredientsScrollPane = new JScrollPane(ingredientsPanel);
     ingredientsScrollPane.setBorder(null);
     ingredientsScrollPane.getViewport().setOpaque(false);
-
 
     JTextArea donkatsuProcedureArea = new JTextArea("Procedure:\n\n"
             +"DONKATSU SAUCE"
@@ -2603,7 +2579,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             + "5.Carefully place the pork cutlet in the sizzling oil and fry for about four minutes, flipping it every one to two minutes for even cooking. Once the pork cutlet is fully cooked and golden-brown, remove it from the oil and place on paper towels to absorb excess oil. Using a fine-mesh strainer, quickly skim off any remaining fried crumbs from the surface of the oil between batches. Repeat this process until all the cutlets are fried. \n "
             + "6.Serve your chosen sides on a large plate, arranged around the edge. If serving cabbage, combine the ketchup and mayonnaise in a small bowl, then dollop the sauce over the cabbage. Place the cutlet in the center of the plate. Drizzle the sauce over it. Enjoy! \n " 
             );
-
     donkatsuProcedureArea.setForeground(Color.decode("#8B0000"));
     donkatsuProcedureArea.setFont(new Font("Arial", Font.PLAIN, 14));
     donkatsuProcedureArea.setOpaque(false);
@@ -2628,8 +2603,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
                 }
             }
         }
-
-        
         JFrame buyIngredientsFrame = new JFrame("Checked Ingredients");
         JPanel ingredientsListPanel = new JPanel(new BorderLayout());
 
@@ -2641,8 +2614,7 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JButton confirmButton = new JButton("Confirm Purchase");
         JButton cancelButton = new JButton("Cancel");
-        
-        
+
         confirmButton.addActionListener(actionEvent -> {
 
     JPanel confirmationPanel = new JPanel(new BorderLayout());
@@ -2672,7 +2644,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             JOptionPane.OK_CANCEL_OPTION,
             JOptionPane.INFORMATION_MESSAGE
     );
-
     if (optionChosen == JOptionPane.OK_OPTION) {
         JFrame thankYouFrame = new JFrame("Thank You");
         JLabel thankYouLabel = new JLabel("Thank you for your purchase!");
@@ -2685,9 +2656,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         buyIngredientsFrame.dispose();
     }
 });
-
-    
-        
         cancelButton.addActionListener(actionEvent -> buyIngredientsFrame.dispose()); 
         
         buttonPanel.add(confirmButton);
@@ -2695,21 +2663,17 @@ ingredientsScrollPane.getViewport().setOpaque(false);
 
         ingredientsListPanel.add(checkedIngredientsArea, BorderLayout.CENTER);
         ingredientsListPanel.add(buttonPanel, BorderLayout.SOUTH);
-        
-        
+
         buyIngredientsFrame.add(ingredientsListPanel);
         buyIngredientsFrame.pack();
         buyIngredientsFrame.setLocationRelativeTo(null); 
         buyIngredientsFrame.setVisible(true);
     }
 });
-
-    
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
     buttonPanel.add(buyButton);
     buttonPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 0));
 
-    
     donkatsuPanel.setLayout(new BorderLayout());
     donkatsuPanel.add(labelsPanel, BorderLayout.NORTH);
     donkatsuPanel.add(ingredientsScrollPane, BorderLayout.CENTER);
@@ -2718,7 +2682,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
 
     return donkatsuPanel;
 }
-
     public static JPanel createChocolateSouffleRecipePanel() {
     JPanel chocolateSoufflePanel = new JPanel(new BorderLayout());
 
@@ -2754,15 +2717,14 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         "4 large eggs, separated",
         "Powdered sugar, for serving"
     };
-
     Map<String, Double> chocolateSouffleIngredientPrices = new HashMap<>();
-    chocolateSouffleIngredientPrices.put("1/2 c. (1 stick) butter, cut into tablespoons", 2.5);
-    chocolateSouffleIngredientPrices.put("6 tbsp. granulated sugar", 00.0);
-    chocolateSouffleIngredientPrices.put("8 oz. semisweet chocolate", 00.0);
-    chocolateSouffleIngredientPrices.put("1 tsp. pure vanilla extract", 00.0);
-    chocolateSouffleIngredientPrices.put("1 tsp. kosher salt", 00.0);
-    chocolateSouffleIngredientPrices.put("4 large eggs", 00.0);
-    chocolateSouffleIngredientPrices.put("Powdered sugar (for serving)", 00.0);
+    chocolateSouffleIngredientPrices.put("1/2 c. (1 stick) butter, cut into tablespoons", 15.00);
+    chocolateSouffleIngredientPrices.put("6 tbsp. granulated sugar", 30.00);
+    chocolateSouffleIngredientPrices.put("8 oz. semisweet chocolate", 75.00);
+    chocolateSouffleIngredientPrices.put("1 tsp. pure vanilla extract", 40.00);
+    chocolateSouffleIngredientPrices.put("1 tsp. kosher salt", 10.00);
+    chocolateSouffleIngredientPrices.put("4 large eggs", 60.00);
+    chocolateSouffleIngredientPrices.put("Powdered sugar (for serving)", 50.00);
 
     int numColumns = 2;
     int checkboxCount = 0;
@@ -2806,7 +2768,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
 
         checkboxCount++;
     }
-
     JScrollPane ingredientsScrollPane = new JScrollPane(ingredientsPanel);
     ingredientsScrollPane.setBorder(null);
     ingredientsScrollPane.getViewport().setOpaque(false);
@@ -2819,7 +2780,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         + "5. Bake until risen and slightly wobbly, about 20 minutes. Dust with powdered sugar before serving."
             
     );
-
     chocolateSouffleProcedureArea.setForeground(Color.decode("#8B0000"));
     chocolateSouffleProcedureArea.setFont(new Font("Arial", Font.PLAIN, 14));
     chocolateSouffleProcedureArea.setOpaque(false);
@@ -2844,8 +2804,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
                 }
             }
         }
-
-        
         JFrame buyIngredientsFrame = new JFrame("Checked Ingredients");
         JPanel ingredientsListPanel = new JPanel(new BorderLayout());
 
@@ -2888,7 +2846,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             JOptionPane.OK_CANCEL_OPTION,
             JOptionPane.INFORMATION_MESSAGE
     );
-
     if (optionChosen == JOptionPane.OK_OPTION) {
         JFrame thankYouFrame = new JFrame("Thank You");
         JLabel thankYouLabel = new JLabel("Thank you for your purchase!");
@@ -2901,9 +2858,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         buyIngredientsFrame.dispose();
     }
 });
-
-    
-        
         cancelButton.addActionListener(actionEvent -> buyIngredientsFrame.dispose()); 
         
         buttonPanel.add(confirmButton);
@@ -2966,17 +2920,14 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             "8 drops pink food coloring",
             "9 tbsp. raspberry preserves"
         };
-
-
     Map<String, Double> frenchMacaroonIngredientPrices = new HashMap<>();
-    frenchMacaroonIngredientPrices.put("1 1/4 c. (120 g.) superfine almond flour", 5.0); 
-    frenchMacaroonIngredientPrices.put("1 c. (115 g.) confectioners' sugar", 5.0);
-    frenchMacaroonIngredientPrices.put("3 (100 g.) large egg whites", 5.0);
-    frenchMacaroonIngredientPrices.put("1/4 tsp. cream of tartar", 5.0);
-    frenchMacaroonIngredientPrices.put("1/2 c. (100 g.) granulated sugar", 5.0);
-    frenchMacaroonIngredientPrices.put("8 drops pink food coloring", 5.0);
-    frenchMacaroonIngredientPrices.put("9 tbsp. raspberry preserves", 5.0);
-
+    frenchMacaroonIngredientPrices.put("1 1/4 c. (120 g.) superfine almond flour", 55.0);
+    frenchMacaroonIngredientPrices.put("1 c. (115 g.) confectioners' sugar", 50.0);
+    frenchMacaroonIngredientPrices.put("3 (100 g.) large egg whites", 45.00);
+    frenchMacaroonIngredientPrices.put("1/4 tsp. cream of tartar", 15.00);
+    frenchMacaroonIngredientPrices.put("1/2 c. (100 g.) granulated sugar", 25.0);
+    frenchMacaroonIngredientPrices.put("8 drops pink food coloring", 20.0);
+    frenchMacaroonIngredientPrices.put("9 tbsp. raspberry preserves", 35.0);
 
     int numColumns = 2;
     int checkboxCount = 0;
@@ -3056,8 +3007,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
                 }
             }
         }
-
-        
         JFrame buyIngredientsFrame = new JFrame("Checked Ingredients");
         JPanel ingredientsListPanel = new JPanel(new BorderLayout());
 
@@ -3100,7 +3049,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             JOptionPane.OK_CANCEL_OPTION,
             JOptionPane.INFORMATION_MESSAGE
     );
-
     if (optionChosen == JOptionPane.OK_OPTION) {
         JFrame thankYouFrame = new JFrame("Thank You");
         JLabel thankYouLabel = new JLabel("Thank you for your purchase!");
@@ -3113,9 +3061,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         buyIngredientsFrame.dispose();
     }
 });
-
-   
-        
         cancelButton.addActionListener(actionEvent -> buyIngredientsFrame.dispose()); 
         
         buttonPanel.add(confirmButton);
@@ -3182,20 +3127,18 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         "2 teaspoons chopped tarragon",
         "Crusty bread (for serving)"
 };
-
     Map<String, Double> chickenDijonIngredientPrices = new HashMap<>();
-    chickenDijonIngredientPrices.put("1 teaspoon coriander seeds", 1.5); 
-    chickenDijonIngredientPrices.put("2 tablespoons extra-virgin olive oil", 1.5);
-    chickenDijonIngredientPrices.put("8 medium chicken drumsticks", 1.5);
-    chickenDijonIngredientPrices.put("Salt and freshly ground pepper", 1.5);
-    chickenDijonIngredientPrices.put("1/4 cup finely chopped onion", 1.5);
-    chickenDijonIngredientPrices.put("4 garlic cloves, minced", 1.5);
-    chickenDijonIngredientPrices.put("1 1/2 cups low-sodium chicken broth", 1.5);
-    chickenDijonIngredientPrices.put("2 tablespoons whole-grain mustard", 1.5);
-    chickenDijonIngredientPrices.put("3 tablespoons crème fraîche or sour cream", 1.5);
-    chickenDijonIngredientPrices.put("2 teaspoons chopped tarragon", 1.5);
-    chickenDijonIngredientPrices.put("Crusty bread (for serving)", 1.5);
-
+    chickenDijonIngredientPrices.put("1 teaspoon coriander seeds", 15.00);
+    chickenDijonIngredientPrices.put("2 tablespoons extra-virgin olive oil", 10.00);
+    chickenDijonIngredientPrices.put("8 medium chicken drumsticks", 150.00);
+    chickenDijonIngredientPrices.put("Salt and freshly ground pepper", 25.00);
+    chickenDijonIngredientPrices.put("1/4 cup finely chopped onion", 25.00);
+    chickenDijonIngredientPrices.put("4 garlic cloves, minced", 8.00);
+    chickenDijonIngredientPrices.put("1 1/2 cups low-sodium chicken broth", 20.00);
+    chickenDijonIngredientPrices.put("2 tablespoons whole-grain mustard", 15.00);
+    chickenDijonIngredientPrices.put("3 tablespoons crème fraîche or sour cream", 25.00);
+    chickenDijonIngredientPrices.put("2 teaspoons chopped tarragon", 15.00);
+    chickenDijonIngredientPrices.put("Crusty bread (for serving)", 35.00);
 
     int numColumns = 2;
     int checkboxCount = 0;
@@ -3229,7 +3172,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             buyButton.setVisible(atLeastOneChecked);
             buyButton.setText("Buy - Total: ₱" + String.format("%.2f", totalCost[0]));
         });
-
         gbc.gridx = checkboxCount % numColumns;
         ingredientsPanel.add(ingredientCheckbox, gbc);
 
@@ -3239,7 +3181,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
 
         checkboxCount++;
     }
-
     JScrollPane ingredientsScrollPane = new JScrollPane(ingredientsPanel);
     ingredientsScrollPane.setBorder(null);
     ingredientsScrollPane.getViewport().setOpaque(false);
@@ -3249,7 +3190,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             + "2. Add onion and garlic. Pour in chicken broth and coriander. Simmer until cooked.\n"
             + "3. Whisk mustard with crème fraîche and tarragon. Simmer in skillet. Serve with bread."
     );
-
     chickenDijonProcedureArea.setForeground(Color.decode("#8B0000"));
     chickenDijonProcedureArea.setFont(new Font("Arial", Font.PLAIN, 14));
     chickenDijonProcedureArea.setOpaque(false);
@@ -3274,8 +3214,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
                     }
                 }
             }
-
-
             JFrame buyIngredientsFrame = new JFrame("Checked Ingredients");
             JPanel ingredientsListPanel = new JPanel(new BorderLayout());
 
@@ -3283,11 +3221,9 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             checkedIngredientsArea.setFont(new Font("Arial", Font.PLAIN, 14));
             checkedIngredientsArea.setEditable(false);
 
-
             JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
             JButton confirmButton = new JButton("Confirm Purchase");
             JButton cancelButton = new JButton("Cancel");
-
 
             confirmButton.addActionListener(actionEvent -> {
 
@@ -3318,7 +3254,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             JOptionPane.OK_CANCEL_OPTION,
             JOptionPane.INFORMATION_MESSAGE
     );
-
     if (optionChosen == JOptionPane.OK_OPTION) {
         JFrame thankYouFrame = new JFrame("Thank You");
         JLabel thankYouLabel = new JLabel("Thank you for your purchase!");
@@ -3331,9 +3266,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         buyIngredientsFrame.dispose();
     }
 });
-
-
-
             cancelButton.addActionListener(actionEvent -> buyIngredientsFrame.dispose());
 
             buttonPanel.add(confirmButton);
@@ -3342,14 +3274,12 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             ingredientsListPanel.add(checkedIngredientsArea, BorderLayout.CENTER);
             ingredientsListPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-
             buyIngredientsFrame.add(ingredientsListPanel);
             buyIngredientsFrame.pack();
             buyIngredientsFrame.setLocationRelativeTo(null);
             buyIngredientsFrame.setVisible(true);
         }
     });
-    
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
     buttonPanel.add(buyButton);
     buttonPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 0));
@@ -3399,18 +3329,16 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         "½ teaspoon table salt",
         "4 cups olive oil"
 };
-
     Map<String, Double> chickenConfitIngredientPrices = new HashMap<>();
-    chickenConfitIngredientPrices.put("4 chicken leg portions with thighs attached", 276.74);
-    chickenConfitIngredientPrices.put("1 tablespoon plus 1/8 teaspoon kosher salt", 276.74);
-    chickenConfitIngredientPrices.put("½ teaspoon freshly ground black pepper", 276.74);
-    chickenConfitIngredientPrices.put("10 garlic cloves", 276.74);
-    chickenConfitIngredientPrices.put("4 bay leaves", 276.74);
-    chickenConfitIngredientPrices.put("4 sprigs fresh thyme", 276.74);
-    chickenConfitIngredientPrices.put("1 ½ teaspoons black peppercorns", 276.74);
-    chickenConfitIngredientPrices.put("½ teaspoon table salt", 276.74);
-    chickenConfitIngredientPrices.put("4 cups olive oil", 276.74);
-    
+    chickenConfitIngredientPrices.put("4 chicken leg portions with thighs attached", 150.00);
+    chickenConfitIngredientPrices.put("1 tablespoon plus 1/8 teaspoon kosher salt", 15.00);
+    chickenConfitIngredientPrices.put("½ teaspoon freshly ground black pepper", 10.00);
+    chickenConfitIngredientPrices.put("10 garlic cloves", 40.00);
+    chickenConfitIngredientPrices.put("4 bay leaves", 10.00);
+    chickenConfitIngredientPrices.put("4 sprigs fresh thyme", 15.00);
+    chickenConfitIngredientPrices.put("1 ½ teaspoons black peppercorns", 5.00);
+    chickenConfitIngredientPrices.put("½ teaspoon table salt", 5.00);
+    chickenConfitIngredientPrices.put("4 cups olive oil", 20.00);
 
     int numColumns = 2;
     int checkboxCount = 0;
@@ -3454,7 +3382,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
 
         checkboxCount++;
     }
-    
     JScrollPane ingredientsScrollPane = new JScrollPane(ingredientsPanel);
     ingredientsScrollPane.setBorder(null);
     ingredientsScrollPane.getViewport().setOpaque(false);
@@ -3490,8 +3417,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
                 }
             }
         }
-
-        
         JFrame buyIngredientsFrame = new JFrame("Checked Ingredients");
         JPanel ingredientsListPanel = new JPanel(new BorderLayout());
 
@@ -3534,7 +3459,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
             JOptionPane.OK_CANCEL_OPTION,
             JOptionPane.INFORMATION_MESSAGE
     );
-
     if (optionChosen == JOptionPane.OK_OPTION) {
         JFrame thankYouFrame = new JFrame("Thank You");
         JLabel thankYouLabel = new JLabel("Thank you for your purchase!");
@@ -3547,8 +3471,6 @@ ingredientsScrollPane.getViewport().setOpaque(false);
         buyIngredientsFrame.dispose();
     }
 });
-
-        
         cancelButton.addActionListener(actionEvent -> buyIngredientsFrame.dispose()); 
         
         buttonPanel.add(confirmButton);
@@ -3556,21 +3478,17 @@ ingredientsScrollPane.getViewport().setOpaque(false);
 
         ingredientsListPanel.add(checkedIngredientsArea, BorderLayout.CENTER);
         ingredientsListPanel.add(buttonPanel, BorderLayout.SOUTH);
-        
-        
+
         buyIngredientsFrame.add(ingredientsListPanel);
         buyIngredientsFrame.pack();
         buyIngredientsFrame.setLocationRelativeTo(null); 
         buyIngredientsFrame.setVisible(true);
     }
 });
-
-    
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
     buttonPanel.add(buyButton);
     buttonPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 0));
 
-    
     chickenConfitPanel.setLayout(new BorderLayout());
     chickenConfitPanel.add(labelsPanel, BorderLayout.NORTH);
     chickenConfitPanel.add(ingredientsScrollPane, BorderLayout.CENTER);
@@ -3578,10 +3496,5 @@ ingredientsScrollPane.getViewport().setOpaque(false);
     chickenConfitPanel.add(chickenConfitProcedureScrollPane, BorderLayout.SOUTH);
 
     return chickenConfitPanel;
-}  
-
-
-
-
-
+}
 }

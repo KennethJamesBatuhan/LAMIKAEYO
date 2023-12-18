@@ -9,9 +9,8 @@ import java.util.Scanner;
 
 public class LOGIN extends JFrame {
     JPanel backgroundPanel, background, loginPanel;
-    JButton loginButtons;
-
     private static JLabel errorMessageLabel;
+
     public LOGIN(){
         // Create a JFrame
         this.setTitle("LAMIKAEYO");
@@ -25,14 +24,14 @@ public class LOGIN extends JFrame {
         this.add(backgroundPanel);
         this.add(loginPanel);
     }
-
+    //background picture
     public void backgroundPanel(){
         background = new JPanel(){
             @Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 try {
-                    BufferedImage backgroundPicture = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\LOGINPIC.png"));
+                    BufferedImage backgroundPicture = ImageIO.read(new File("resources\\LOGINPIC.png"));
                     g.drawImage(backgroundPicture, 0, 0, backgroundPicture.getWidth() , backgroundPicture.getHeight(), null);
                 } catch (IOException ignored) {}
             }
@@ -41,7 +40,6 @@ public class LOGIN extends JFrame {
         }
 
     public void LOGIN() {
-
         // Create a JPanel with a background
         backgroundPanel = new JPanel();
         backgroundPanel.setLayout(null);
@@ -49,13 +47,13 @@ public class LOGIN extends JFrame {
         backgroundPanel();
         backgroundPanel.add(background);
 
-        // Create a JPanel with a maroon background
+        // add logo above the LAMIKAEYO label
         loginPanel = new JPanel(){
             @Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 try {
-                    BufferedImage logoDisplay = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\kaeyo.png"));
+                    BufferedImage logoDisplay = ImageIO.read(new File("resources\\kaeyo.png"));
                     g.drawImage(logoDisplay, 160, 80, logoDisplay.getWidth() , logoDisplay.getHeight(), null);
                 } catch (IOException ignored) {}
             }
@@ -93,10 +91,11 @@ public class LOGIN extends JFrame {
         userPasswordField.setFont(new Font("Helvetica Neue", Font.PLAIN, 14));
         userPasswordField.setBounds((loginPanel.getWidth() - 285) / 2, 300, 275, 40);
 
-        // Add focus listeners for placeholder effect
+        //placeholder
         addPlaceholderListener(userIDField, "Username");
         addPlaceholderListener(userPasswordField, "Password");
 
+        //button for log in
         JButton loginButton = new JButton("LOG IN");
         loginButton.setFont(new Font("Helvetica Neue", Font.BOLD, 14));
         loginButton.setBounds((loginPanel.getWidth() - 285) / 2, 360, 115, 35);
@@ -104,6 +103,7 @@ public class LOGIN extends JFrame {
         loginButton.setForeground(Color.decode("#8B0000"));
         loginButton.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 
+        //Create an account button
         JButton createAccount = new JButton("Create an account");
         createAccount.setOpaque(false);
         createAccount.setContentAreaFilled(false);
@@ -127,7 +127,6 @@ public class LOGIN extends JFrame {
         loginPanel.add(errorMessageLabel);
 
         // Add action listener to the login button
-
             loginButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -145,7 +144,6 @@ public class LOGIN extends JFrame {
         createAccount.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Add logic for the back button (e.g., go back to the previous screen)
                 if(e.getSource()==createAccount){
                     setVisible(false);
                     new Registration();
@@ -153,6 +151,8 @@ public class LOGIN extends JFrame {
             }
         });
     }
+
+    //Placeholder for username and password
     private static void addPlaceholderListener(JTextField textField, String placeholder) {
         textField.addFocusListener(new FocusListener() {
             @Override
@@ -175,7 +175,7 @@ public class LOGIN extends JFrame {
     {
         String str = "";
         try {
-            File myObj = new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\FileData.txt");
+            File myObj = new File("FileData\\FileData.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -187,42 +187,21 @@ public class LOGIN extends JFrame {
         }
         return str;
     }
-//    public boolean checkAccount(String data, String userNameEntered, String passwordEntered){
-//        String userName, password;
-//        String[] datas = data.split("\n");
-//        for(int i = 0; i < datas.length; i++){
-//            if(!datas[i].isEmpty()) {
-//                if(datas[i].length() > 10) {
-//                    userName = datas[i].substring(11);
-//                    password = datas[i + 1].substring(11);
-//                    if (userName.equals(userNameEntered) && password.equals(passwordEntered)) {
-//                        //                    String filename = "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\" + userName + "_" + password + ".txt";
-//                        //                    try {
-//                        //                        Writer write = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "utf-8"));
-//                        //                    }catch (IOException ex){
-//                        //
-//                        //                    }
-//                        return true;
-//                    }
-//                }
-//            }
-//        }
-//        return false;
-//    }
-public boolean checkAccount(String data, String userNameEntered, String passwordEntered){
-    String userName, password;
-    String[] datas = data.split("\n");
-    for(int i = 0; i < datas.length; i++){
-        if(i%8==2){
-            userName = datas[i].substring(11);
-            if(userNameEntered.equals(userName)){
-                password = datas[i+1].substring(11);
-                if(passwordEntered.equals(password)) return true;
-            }
-        }
-    }
-    return false;
-}
 
+    //Check the username and password
+        public boolean checkAccount(String data, String userNameEntered, String passwordEntered){
+            String userName, password;
+            String[] datas = data.split("\n");
+            for(int i = 0; i < datas.length; i++){
+                if(i%8==2){
+                    userName = datas[i].substring(11);
+                    if(userNameEntered.equals(userName)){
+                        password = datas[i+1].substring(11);
+                        if(passwordEntered.equals(password)) return true;
+                    }
+                }
+            }
+            return false;
+        }
 }
 

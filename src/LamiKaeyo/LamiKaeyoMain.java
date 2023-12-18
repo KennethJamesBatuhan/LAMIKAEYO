@@ -63,7 +63,7 @@ public class LamiKaeyoMain implements ActionListener{
                     public void paintComponent(Graphics g) {
                             super.paintComponent(g);
                             try {
-                                    BufferedImage logoDisplay = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\LogoDesignWithText.png"));
+                                    BufferedImage logoDisplay = ImageIO.read(new File("resources\\LogoDesignWithText.png"));
                                     g.drawImage(logoDisplay, 0, 0, logoDisplay.getWidth(), logoDisplay.getHeight(), null);
                             } catch (IOException ignored) {}
                     }
@@ -77,7 +77,7 @@ public class LamiKaeyoMain implements ActionListener{
                     public void paintComponent(Graphics g) {
                             super.paintComponent(g);
                             try {
-                                    BufferedImage logoDisplay = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\pinoyStyle.png"));
+                                    BufferedImage logoDisplay = ImageIO.read(new File("resources\\pinoyStyle.png"));
                                     g.drawImage(logoDisplay, 0, 0, logoDisplay.getWidth()-100 , logoDisplay.getHeight()-50, null);
                             } catch (IOException ignored) {}
                     }
@@ -92,7 +92,7 @@ public class LamiKaeyoMain implements ActionListener{
                     public void paintComponent(Graphics g) {
                             super.paintComponent(g);
                             try {
-                                    BufferedImage logoDisplay = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\koreanStyle.png"));
+                                    BufferedImage logoDisplay = ImageIO.read(new File("resources\\koreanStyle.png"));
                                     g.drawImage(logoDisplay, 0, -20, logoDisplay.getWidth()/5+100 , logoDisplay.getHeight()/5+55, null);
                             } catch (IOException ignored) {}
                     }
@@ -107,7 +107,7 @@ public class LamiKaeyoMain implements ActionListener{
                     public void paintComponent(Graphics g) {
                             super.paintComponent(g);
                             try {
-                                    BufferedImage logoDisplay = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\japaneseStyle.png"));
+                                    BufferedImage logoDisplay = ImageIO.read(new File("resources\\japaneseStyle.png"));
                                     g.drawImage(logoDisplay, 0, -20, logoDisplay.getWidth()/5+100 , logoDisplay.getHeight()/5+55, null);
                             } catch (IOException ignored) {}
                     }
@@ -122,7 +122,7 @@ public class LamiKaeyoMain implements ActionListener{
                     public void paintComponent(Graphics g) {
                             super.paintComponent(g);
                             try {
-                                    BufferedImage logoDisplay = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\frenchStyle.png"));
+                                    BufferedImage logoDisplay = ImageIO.read(new File("resources\\frenchStyle.png"));
                                     g.drawImage(logoDisplay, 0, -20, logoDisplay.getWidth()/5+100 , logoDisplay.getHeight()/5+55, null);
                             } catch (IOException ignored) {}
                     }

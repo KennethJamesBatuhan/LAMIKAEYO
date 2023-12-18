@@ -14,8 +14,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Registration extends JFrame implements ActionListener {
-
-    // Components of the Form
     private Container frame;
     private JPanel logo;
     private JLabel title;
@@ -29,8 +27,6 @@ public class Registration extends JFrame implements ActionListener {
     private JButton register;
     private JButton accountReady;
 
-    // constructor, to initialize the components
-    // with default values.
     public Registration()
     {
         setTitle("LAMIKAEYO");
@@ -46,7 +42,7 @@ public class Registration extends JFrame implements ActionListener {
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 try {
-                    BufferedImage logoDisplay = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\LogoDesignWithText.png"));
+                    BufferedImage logoDisplay = ImageIO.read(new File("resources\\LogoDesignWithText.png"));
                     g.drawImage(logoDisplay, 25, -30, logoDisplay.getWidth()/5+80, logoDisplay.getHeight()/5+60, null);
                 } catch (IOException ignored) {}
             }
@@ -61,6 +57,7 @@ public class Registration extends JFrame implements ActionListener {
         logo.setOpaque(false);
         logo.setPreferredSize(new Dimension(250,200));
 
+        //header
         JPanel header = new JPanel();
         header.setBackground(Color.decode("#8B0000"));
         header.setBounds(0, 0, 1250, 50);
@@ -76,6 +73,7 @@ public class Registration extends JFrame implements ActionListener {
         title.setLocation(280, 85);
         frame.add(title);
 
+        //textfield for firstname
         firstName = new JTextField("First Name");
         firstName.setFont(new Font("Helvetica Neue", Font.PLAIN, 15));
         firstName.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
@@ -85,6 +83,7 @@ public class Registration extends JFrame implements ActionListener {
         firstName.setLocation(300, 150);
         frame.add(firstName);
 
+        //textfield for lastname
         lastName = new JTextField("Last Name");
         lastName.setFont(new Font("Helvetica Neue", Font.PLAIN, 15));
         lastName.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
@@ -94,6 +93,7 @@ public class Registration extends JFrame implements ActionListener {
         lastName.setLocation(500, 150);
         frame.add(lastName);
 
+        //Textfield for username
         userName = new JTextField("Username");
         userName.setFont(new Font("Helvetica Neue", Font.PLAIN, 15));
         userName.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
@@ -103,6 +103,7 @@ public class Registration extends JFrame implements ActionListener {
         userName.setLocation(300, 210);
         frame.add(userName);
 
+        //PasswordField
         password = new JPasswordField("Password");
         password.setFont(new Font("Helvetica Neue", Font.PLAIN, 15));
         password.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
@@ -112,6 +113,7 @@ public class Registration extends JFrame implements ActionListener {
         password.setLocation(300, 270);
         frame.add(password);
 
+        //Textfield for Address
         address = new JTextField("Address");
         address.setFont(new Font("Helvetica Neue", Font.PLAIN, 15));
         address.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
@@ -121,6 +123,7 @@ public class Registration extends JFrame implements ActionListener {
         address.setLocation(300, 330);
         frame.add(address);
 
+        //Textfield for Email
         email = new JTextField("Email");
         email.setFont(new Font("Helvetica Neue", Font.PLAIN, 15));
         email.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
@@ -130,6 +133,7 @@ public class Registration extends JFrame implements ActionListener {
         email.setLocation(300, 390);
         frame.add(email);
 
+        //Textfield for ContactNo.
         contactNumber = new JTextField("Contact Number");
         contactNumber.setFont(new Font("Helvetica Neue", Font.PLAIN, 15));
         contactNumber.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
@@ -139,6 +143,7 @@ public class Registration extends JFrame implements ActionListener {
         contactNumber.setLocation(300, 450);
         frame.add(contactNumber);
 
+        //Placeholders
         addPlaceholderListener(firstName, "First Name");
         addPlaceholderListener(lastName, "Last Name");
         addPlaceholderListener(userName, "Username");
@@ -147,6 +152,7 @@ public class Registration extends JFrame implements ActionListener {
         addPlaceholderListener(email, "Email");
         addPlaceholderListener(contactNumber, "Contact Number");
 
+        //Button for Register
         register = new JButton("Register");
         register.setFont(new Font("Helvetica Neue", Font.PLAIN, 15));
         register.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
@@ -156,6 +162,7 @@ public class Registration extends JFrame implements ActionListener {
         register.addActionListener(this);
         frame.add(register);
 
+        //Button for Already have an account?
         accountReady = new JButton("Already have an account?");
         accountReady.setOpaque(false);
         accountReady.setContentAreaFilled(false);
@@ -246,9 +253,10 @@ public class Registration extends JFrame implements ActionListener {
             new LOGIN();
         }
     }
+    //Write Data
     public void WriteData(String write)
     {
-        Path path = Paths.get("C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\FileData.txt");
+        Path path = Paths.get("C:\\Users\\Kenji\\OneDrive\\Desktop\\LAMIKAEYO\\FileData\\FileData.txt");
         try {
             write = write + "\n" + ReadFile();
             Files.writeString(path, write, StandardCharsets.UTF_8);
@@ -261,11 +269,12 @@ public class Registration extends JFrame implements ActionListener {
         for (int i = 0; i < a.length; i++) sb.append(a[i]);
         return sb.toString();
     }
+    //Read File
     public String ReadFile()
     {
         String str = "";
         try {
-            File myObj = new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\FileData.txt");
+            File myObj = new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\LAMIKAEYO\\FileData\\FileData.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();

@@ -9,7 +9,6 @@ import javax.swing.border.Border;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Home extends JFrame implements ActionListener {
-
     private static JPanel contentPanel;
     private static JPanel homePage;
     private static JPanel pinoyPage;
@@ -18,7 +17,6 @@ public class Home extends JFrame implements ActionListener {
     private static JPanel frenchPage;
     private static JButton logoutButton;
     private static JButton menuButton;
-
 
 
     public Home() {
@@ -76,7 +74,7 @@ public class Home extends JFrame implements ActionListener {
 
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\menu.png"));
+            img = ImageIO.read(new File("resources\\menu.png"));
             int scaledWidth = 30;
             int scaledHeight = 30;
             Image scaledImg = img.getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_SMOOTH);
@@ -124,7 +122,7 @@ public class Home extends JFrame implements ActionListener {
             contactLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 2, 0));
 
 
-           ImageIcon userIcon = new ImageIcon("C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\profile.png");
+           ImageIcon userIcon = new ImageIcon("resources\\profile.png");
            int width = 50;
            int height = 50;
            Image img = userIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
@@ -153,19 +151,20 @@ public class Home extends JFrame implements ActionListener {
              logoutButton = new JButton("Logout");
             logoutButton.setBackground(Color.decode("#8B0000"));
             logoutButton.setForeground(Color.WHITE);
-//            logoutButton.addActionListener(new ActionListener() {
-//                @Override
-//                public void actionPerformed(ActionEvent e) {
-//                    if(e.getSource()==logoutButton){
-//                        frame.setVisible(false);
-//                        new LamiKaeyoMain();
-//                    }
-//                    }
-//                });
-               logoutButton.addActionListener(this);
+//          logoutButton.addActionListener(this);
             logoutPanel.add(logoutButton);
             menuPanel.add(Box.createVerticalGlue());
             menuPanel.add(logoutPanel);
+
+               logoutButton.addActionListener(new ActionListener() {
+                   @Override
+                   public void actionPerformed(ActionEvent e) {
+                       if(e.getSource()==logoutButton){
+                           frame.setVisible(false);
+                           new LamiKaeyoMain();
+                       }
+                   }
+               });
 
             slidingMenu[0] = new JPanel(new BorderLayout());
             slidingMenu[0].setPreferredSize(new Dimension(frame.getWidth() * 1 / 7, frame.getHeight()));
@@ -206,31 +205,31 @@ public class Home extends JFrame implements ActionListener {
         homePage = createHomePage();
 
         pinoyPage = createStylePanel("Pinoy", new String[]{
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\adobo.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\caldereta.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\tinola.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\sinigang.png"
+                "resources\\adobo.png",
+                "resources\\caldereta.png",
+                "resources\\tinola.png",
+                "resources\\sinigang.png"
         }, new String[]{"Adobo Flakes", "Beef Caldereta", "Chicken Tinola", "Pork Sinigang with Gabi"});
 
         koreanPage = createStylePanel("Korean", new String[]{
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\sotteok.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\kimbap.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\chickensoup.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\donkatsu.png"
+                "resources\\sotteok.png",
+                "resources\\kimbap.png",
+                "resources\\chickensoup.png",
+                "resources\\donkatsu.png"
         }, new String[]{"Sotteok", "Mini Kimbap", "Chicken Noodle Soup", "Donkatsu"});
 
         japanesePage = createStylePanel("Japanese", new String[]{
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\Sushi.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\Sukiyaki.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\Tamagoyaki.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\Ramen.png"
+                "resources\\Sushi.png",
+                "resources\\Sukiyaki.png",
+                "resources\\Tamagoyaki.png",
+                "resources\\Ramen.png"
         }, new String[]{"Sushi", "Traditional Beef Sukiyaki", "Tamagoyaki\n(Japanese Sweet Omelet)", "Ramen"});
 
         frenchPage = createStylePanel("French", new String[]{
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\souffle.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\macarons.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\dijon.png",
-                "C:\\Users\\Kenji\\OneDrive\\Desktop\\ka\\src\\LamiKaeyo\\confit.png"
+                "resources\\souffle.png",
+                "resources\\macarons.png",
+                "resources\\dijon.png",
+                "resources\\confit.png"
 
         }, new String[]{"Chocolate Souffle", "French Macaroon", "Chicken Dijon", "Chicken Confit"});
 
@@ -298,18 +297,18 @@ public class Home extends JFrame implements ActionListener {
 
     }
 
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==logoutButton){
-            setVisible(false);
-            new LamiKaeyoMain();
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource()==logoutButton){
+                setVisible(false);
+                new LamiKaeyoMain();
+            }
         }
-    }
 
             private static JPanel createHomePage() {
         JPanel homePage = new JPanel(new BorderLayout());
 
             try {
-                BufferedImage backgroundImage = ImageIO.read(new File("C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\logo.png"));
+                BufferedImage backgroundImage = ImageIO.read(new File("resources\\logo.png"));
                 ImageIcon logoIcon = new ImageIcon(backgroundImage.getScaledInstance(300, 200, Image.SCALE_SMOOTH));
                 JLabel logoLabel = new JLabel(logoIcon);
 
@@ -337,10 +336,10 @@ public class Home extends JFrame implements ActionListener {
                 imagePanel.setOpaque(false);
 
                 String[] imagePaths = {
-                    "C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\pinoyStyle.png",
-                    "C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\koreanStyle.png",
-                    "C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\japaneseStyle.png",
-                    "C:\\Users\\Kenji\\OneDrive\\Desktop\\kkk\\src\\LamiKaeyo\\frenchStyle.png"
+                    "resources\\pinoyStyle.png",
+                    "resources\\koreanStyle.png",
+                    "resources\\japaneseStyle.png",
+                    "resources\\frenchStyle.png"
                 };
 
                 for (int i = 0; i < imagePaths.length; i++) {
