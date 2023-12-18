@@ -1,0 +1,23 @@
+First Name : zxc
+Last Name : zxc
+Username : zxc
+Password : zxc
+Address : zxc
+Email : zxc
+Contact Number : 123
+
+First Name : qwerty
+Last Name : qwerty
+Username : asd
+Password : asd
+Address : asd
+Email : asd
+Contact Number : 123
+
+First Name : Kenneth
+Last Name : James
+Username : qwerty
+Password : qwerty
+Address : Santa Fe, Cebu
+Email : kennethjames@gmail.com
+Contact Number : 09123456789
